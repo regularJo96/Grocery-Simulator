@@ -1,22 +1,13 @@
 #include "cart.h"
 
-Cart::Cart(int id, int custId) {
-  Cart::id = id;
-  Cart::custId = custId;
+Cart::Cart(int id) {
+    Cart::id = id;
 }
 
 int Cart::getId() {
-  return (Cart::id);
-}
-
-int Cart::getCustId() {
-  return (Cart::custId);
+    return (Cart::id);
 }
 
 void Cart::setId(int id) {
-  Cart::id = id;
-}
-
-void Cart::setCustId(int id) {
-  Cart::custId = id;
+    Cart::id = id;
 }

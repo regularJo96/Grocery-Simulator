@@ -3,18 +3,15 @@
 #pragma once
 
 class Cart {
-private:
-  int id;
-  int custId;
-  Item* item;
+    private:
+        int id;
+        Item* item;
 
-public:
-  Cart(int id, int custId);
+    public:
+        Cart(int id);
 
-  int getId();
-  int getCustId();
-  void setId(int id);
-  void setCustId(int id);
+        int getId();
+        void setId(int id);
 
-  void placeItem(Item* item);
+        void placeItem(Item* item);
 };

@@ -1,3 +1,8 @@
+#include <string>
+#pragma once
+
+using namespace std;
+
 class Item {
     private:
         int id;
