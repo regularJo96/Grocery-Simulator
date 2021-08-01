@@ -13,6 +13,7 @@ Customer::Customer(string name, int id) {
     Customer::setName(name);
     Customer::setId(id);
     Customer::setShopTime();
+
     std::cout << name << " arrived. They plan to shop for " << shopTime << " minutes" << endl;
 }
 
@@ -40,14 +41,22 @@ void Customer::setShopTime() {
     Customer::shopTime = ((rand() % 30) + 5);
 }
 
-// void Customer::chooseCart(Cart* cart) {
-
-// }
-
-void Customer::placeItemInCart(string name, float price) {
-    // create a item object
-    Item item(price, name);
-    // de-reference the customer's cart and invoke its addItem function
-    (*Customer::cart).addItem(&item);
+void Customer::chooseCart(Cart* cart) {
+    Customer::cart = cart;
 }
 
+void Customer::placeItemInCart(Item* item) {
+    std::cout << Customer::getName() << " grabbed an item" << std::endl;
+    // de-reference the customer's cart and invoke its addItem function
+    (*Customer::cart).addItem(item);
+}
+
+int Customer::grabTime(int currentDuration) {
+    srand(time(NULL));
+    int number = ((rand() % 5) + 1);
+    return (number + currentDuration);
+}
+
+void Customer::cartContent() {
+    (*Customer::cart).getContent();
+}

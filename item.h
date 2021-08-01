@@ -4,13 +4,16 @@
 using namespace std;
 
 class Item {
-    private:
-        float price;
-        string name;
-        
-    public:
-        Item(float price, string name);
+private:
+    float price;
+    string name;
+    Item* nextItem;
 
-        float getPrice();
-        string getName();
+public:
+    Item(float price, string name);
+
+    float getPrice();
+    string getName();
+    Item* getNext();
+    void setNext(Item* item);
 };

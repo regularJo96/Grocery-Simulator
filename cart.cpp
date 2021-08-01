@@ -1,7 +1,10 @@
 #include "cart.h"
+#include <iostream>
 
-Cart::Cart(int id) {
-    Cart::id = id;
+Cart::Cart() {
+    Cart::id = 0;
+    Cart::item = nullptr;
+    Cart::size = 0;
 }
 
 int Cart::getId() {
@@ -12,15 +15,32 @@ void Cart::setId(int id) {
     Cart::id = id;
 }
 
-void Cart::addItem(Item* item){
+void Cart::addItem(Item* item) {
     // this should work like a linked-list / stack add function
-    Item* head = Cart::item;
-    
-    if(head==NULL){
+   
+    if (size == 0) {
         Cart::item = item;
     }
-    else{
-        //the order does not matter, so might as well just tack it on to the end.
-        // (*Cart::item).nextItem = item;
+    else {
+        (*item).setNext(Cart::item);
+        Cart::item = item;
     }
+    Cart::size++;
+}
+
+void Cart::getContent() {
+    std::cout << Cart::item->getName() << std::endl;
+    
+    Item* currentItem = Cart::item;
+    
+
+    string listOfItems = "";
+    int count = 0;
+
+    while (count < Cart::size) {
+        std::cout << currentItem->getName() << " --> ";
+        currentItem = currentItem->getNext();
+        count = count + 1;
+    }
+    std::cout << " end of list" << std::endl;
 }
