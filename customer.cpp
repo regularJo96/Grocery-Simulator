@@ -40,12 +40,12 @@ void Customer::setShopTime() {
     Customer::shopTime = ((rand() % 30) + 5);
 }
 
-void Customer::chooseCart(Cart* cart) {
+// void Customer::chooseCart(Cart* cart) {
 
-}
+// }
 
-void Customer::grabItem(Cart* cart, Item* item) {
-    // if item is in cart, place after last item in cart.
+void Customer::placeItemInCart(Cart* cart, Item* item) {
+    // cart.addItem(item);
 
 }
 

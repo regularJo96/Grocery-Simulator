@@ -13,5 +13,5 @@ class Cart {
         int getId();
         void setId(int id);
 
-        void placeItem(Item* item);
+        void addItem(Item* item);
 };

@@ -20,9 +20,9 @@ public:
     int getShopTime();
 
     void setShopTime();
-    void shop();
-    void grabItem(Cart* cart, Item* item);
-    void chooseCart(Cart* cart);
+    // void shop();
+    void placeItemInCart(Cart* cart, Item* item);
+    // void chooseCart(Cart* cart);
     void setName(string name);
     void setId(int id);
   

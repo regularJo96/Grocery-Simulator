@@ -11,3 +11,7 @@ int Cart::getId() {
 void Cart::setId(int id) {
     Cart::id = id;
 }
+
+void Cart::addItem(Item* item){
+    // this should work like a linked-list / stack add function
+}
