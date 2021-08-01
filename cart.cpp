@@ -1,6 +1,6 @@
 #include "cart.h"
 
-Cart::Cart(int id, int custId) {
+Cart::Cart(int id) {
     Cart::id = id;
 }
 
