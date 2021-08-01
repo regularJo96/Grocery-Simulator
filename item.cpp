@@ -1,6 +1,5 @@
 #include "item.h"
 #include <string>
-#pragma once
 
 using namespace std;
 
@@ -16,4 +15,3 @@ int Item::getId() {
 string Item::getName(){
     return (Item::name);
 }
-

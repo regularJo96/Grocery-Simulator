@@ -7,23 +7,23 @@ using namespace std;
 
 class Customer {
 private:
-  string name;
-  int id;
-  int shopTime;
-  Cart* cart;
+    string name;
+    int id;
+    int shopTime;
+    Cart* cart;
 
 public:
-  Customer();
-  Customer(string name, int id);
-  string getName();
-  int getId();
-  int getShopTime();
+    Customer();
+    Customer(string name, int id);
+    string getName();
+    int getId();
+    int getShopTime();
 
-  void setShopTime();
-  void shop();
-  void grabItem(Cart* cart, Item* item);
-  void chooseCart(Cart* cart);
-  void setName(string name);
-  void setId(int id);
+    void setShopTime();
+    void shop();
+    void grabItem(Cart* cart, Item* item);
+    void chooseCart(Cart* cart);
+    void setName(string name);
+    void setId(int id);
   
 };
