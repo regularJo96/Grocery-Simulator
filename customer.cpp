@@ -44,8 +44,10 @@ void Customer::setShopTime() {
 
 // }
 
-void Customer::placeItemInCart(Cart* cart, Item* item) {
-    // cart.addItem(item);
-
+void Customer::placeItemInCart(string name, float price) {
+    // create a item object
+    Item item(price, name);
+    // de-reference the customer's cart and invoke its addItem function
+    (*Customer::cart).addItem(&item);
 }
 

@@ -3,13 +3,13 @@
 
 using namespace std;
 
-Item::Item(int id, string name) {
-    Item::id = id;
+Item::Item(float price, string name) {
+    Item::price = price;
     Item::name = name;
 }
 
-int Item::getId() {
-    return (Item::id);
+float Item::getPrice() {
+    return (Item::price);
 }
 
 string Item::getName(){
