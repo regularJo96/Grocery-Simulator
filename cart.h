@@ -5,16 +5,13 @@
 class Cart {
     private:
         int id;
-        int custId;
         Item* item;
 
     public:
-        Cart(int id, int custId);
+        Cart(int id);
 
         int getId();
-        int getCustId();
         void setId(int id);
-        void setCustId(int id);
 
         void placeItem(Item* item);
 };
