@@ -5,12 +5,12 @@ using namespace std;
 
 class Item {
     private:
-        int id;
+        float price;
         string name;
         
     public:
-        Item(int id, string name);
+        Item(float price, string name);
 
-        int getId();
+        float getPrice();
         string getName();
 };

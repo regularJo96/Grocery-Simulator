@@ -14,4 +14,13 @@ void Cart::setId(int id) {
 
 void Cart::addItem(Item* item){
     // this should work like a linked-list / stack add function
+    Item* head = Cart::item;
+    
+    if(head==NULL){
+        Cart::item = item;
+    }
+    else{
+        //the order does not matter, so might as well just tack it on to the end.
+        // (*Cart::item).nextItem = item;
+    }
 }
