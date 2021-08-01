@@ -21,9 +21,12 @@ public:
 
     void setShopTime();
     // void shop();
-    void placeItemInCart(string name, float price);
-    // void chooseCart(Cart* cart);
+    void placeItemInCart(Item* item);
+    void chooseCart(Cart* cart);
     void setName(string name);
     void setId(int id);
-  
+
+    int grabTime(int currentDuration);
+    void cartContent();
+
 };
