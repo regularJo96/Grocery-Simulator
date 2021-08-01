@@ -38,7 +38,6 @@ int main() {
             customerNumber = customerNumber + 1;
             workers.push_back(std::thread(work, getName(customerNumber - 1), customerNumber));
         }
-        std::cout << "thread count: " << NUMBER_OF_THREADS << std::endl;
     }
 
     for (auto& th : workers) {

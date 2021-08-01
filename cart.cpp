@@ -29,11 +29,7 @@ void Cart::addItem(Item* item) {
 }
 
 void Cart::getContent() {
-    std::cout << Cart::item->getName() << std::endl;
-    
     Item* currentItem = Cart::item;
-    
-
     string listOfItems = "";
     int count = 0;
 
