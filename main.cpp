@@ -38,6 +38,7 @@ int main() {
             arrival = nextArrival(duration);
         }
         duration = duration + 1;
+      
         std::cout << std::endl;
     }
 

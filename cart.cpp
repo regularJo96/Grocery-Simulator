@@ -38,5 +38,5 @@ void Cart::getContent() {
         currentItem = currentItem->getNext();
         count = count + 1;
     }
-    std::cout << " end of list" << std::endl;
+    std::cout << " end of cart" << std::endl;
 }
