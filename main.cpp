@@ -20,7 +20,7 @@ int main() {
     std::vector<std::thread> workers;
     int storeClose = 20;
     int duration = 1;
-    int arrival = nextArrival(duration);
+    int arrival = nextArrival(0);
     int customerNumber = 0;
     string customerName = "";
 
@@ -37,6 +37,7 @@ int main() {
         if (duration >= arrival) {
             arrival = nextArrival(duration);
         }
+
         duration = duration + 1;
       
         std::cout << std::endl;
@@ -81,7 +82,7 @@ void work(string name, int customerNumber) {
 }
 
 int nextArrival(int currentDuration) {
-    int number = ((rand() % 5) + 1);
+    int number = ((rand() % 4) + 1);
     return (number + currentDuration);
 }
 
