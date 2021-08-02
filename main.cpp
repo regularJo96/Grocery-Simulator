@@ -28,16 +28,17 @@ int main() {
     while (duration < storeClose || NUMBER_OF_THREADS > 0) {
         cout << "time elapsed: " << duration << " minute(s)" << endl;
 
-        if (duration > arrival) {
-            arrival = nextArrival(duration);
-        }
-
         this_thread::sleep_for(chrono::milliseconds(1000));
-        duration = duration + 1;
         if (duration == arrival && duration < storeClose) {
             customerNumber = customerNumber + 1;
             workers.push_back(std::thread(work, getName(customerNumber - 1), customerNumber));
         }
+
+        if (duration >= arrival) {
+            arrival = nextArrival(duration);
+        }
+        duration = duration + 1;
+      
         std::cout << std::endl;
     }
 
