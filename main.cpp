@@ -19,16 +19,16 @@ int main() {
     srand(time(NULL));
     std::vector<std::thread> workers;
     int storeClose = 20;
-    int duration = 0;
-    int arrival = 0;
+    int duration = 1;
+    int arrival = nextArrival(duration);
     int customerNumber = 0;
     string customerName = "";
 
 
     while (duration < storeClose || NUMBER_OF_THREADS > 0) {
-        cout << "time elapsed: " << duration << endl;
+        cout << "time elapsed: " << duration << " minute(s)" << endl;
 
-        if (duration >= arrival) {
+        if (duration > arrival) {
             arrival = nextArrival(duration);
         }
 
@@ -38,6 +38,7 @@ int main() {
             customerNumber = customerNumber + 1;
             workers.push_back(std::thread(work, getName(customerNumber - 1), customerNumber));
         }
+        std::cout << std::endl;
     }
 
     for (auto& th : workers) {
@@ -61,7 +62,7 @@ void work(string name, int customerNumber) {
     while (duration < customer.getShopTime()) {
 
         if (duration == timeToGrab) {
-            // grab a random item from a soon to be implemented has-map of items key value table. [idNumber : ["name", "price"]
+            // grab a random item from a soon to be implemented hash-map of items key value table. [idNumber : ["name", "price"]
             customer.placeItemInCart(new Item(0.00, "apple"));
         }
 
