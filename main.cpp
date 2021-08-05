@@ -68,8 +68,6 @@ void work(string name, int customerNumber, Stock stock) {
     while (duration < customer.getShopTime()) {
 
         if (duration == timeToGrab) {
-            // grab a random item from a soon to be implemented hash-map of items key value table. [idNumber : ["name", "price"]
-            
             customer.placeItemInCart(getRandomItem(stock));
         }
 
