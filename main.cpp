@@ -4,6 +4,7 @@
 #include <time.h>
 #include <vector>
 #include "customer.h"
+#include "stock.h"
 
 using namespace std;
 
@@ -12,9 +13,12 @@ int NUMBER_OF_THREADS = 0;
 
 string getName(int index);
 int nextArrival(int currentDuration);
-void work(string name, int customerNumber);
+void work(string name, int customerNumber, Stock stock);
+Item* getRandomItem(Stock stock);
 
 int main() {
+    Stock stock;
+    stock.readFile();
 
     srand(time(NULL));
     std::vector<std::thread> workers;
@@ -31,7 +35,7 @@ int main() {
         this_thread::sleep_for(chrono::milliseconds(1000));
         if (duration == arrival && duration < storeClose) {
             customerNumber = customerNumber + 1;
-            workers.push_back(std::thread(work, getName(customerNumber - 1), customerNumber));
+            workers.push_back(std::thread(work, getName(customerNumber - 1), customerNumber, stock));
         }
 
         if (duration >= arrival) {
@@ -50,7 +54,7 @@ int main() {
     std::cout << "Grocery Store Simulator exiting..." << std::endl;
 }
 
-void work(string name, int customerNumber) {
+void work(string name, int customerNumber, Stock stock) {
     NUMBER_OF_THREADS++;
     using namespace std::literals::chrono_literals;
     int duration = 0;
@@ -65,7 +69,8 @@ void work(string name, int customerNumber) {
 
         if (duration == timeToGrab) {
             // grab a random item from a soon to be implemented hash-map of items key value table. [idNumber : ["name", "price"]
-            customer.placeItemInCart(new Item(0.00, "apple"));
+            
+            customer.placeItemInCart(getRandomItem(stock));
         }
 
         if (duration >= timeToGrab) {
@@ -100,4 +105,10 @@ string getName(int index) {
                                           "Rivera","Campbell","Mitchell","Carter","Roberts" };
 
     return (array[index]);
+}
+
+Item* getRandomItem(Stock stock){
+    int number = ((rand() % 9));
+
+    return(stock.getItem(number));
 }
