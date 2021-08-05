@@ -46,7 +46,7 @@ void Customer::chooseCart(Cart* cart) {
 }
 
 void Customer::placeItemInCart(Item* item) {
-    std::cout << Customer::getName() << " grabbed an item" << std::endl;
+    std::cout << Customer::getName() << " placed " << item->getName() << " in their cart." << std::endl;
     // de-reference the customer's cart and invoke its addItem function
     (*Customer::cart).addItem(item);
 }
