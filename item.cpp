@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Item::Item(float price, string name) {
+Item::Item(string name, float price) {
     Item::price = price;
     Item::name = name;
     Item::nextItem = nullptr;

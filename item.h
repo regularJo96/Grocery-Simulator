@@ -10,7 +10,7 @@ private:
     Item* nextItem;
 
 public:
-    Item(float price, string name);
+    Item(string name, float price);
 
     float getPrice();
     string getName();
