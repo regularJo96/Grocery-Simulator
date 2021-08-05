@@ -1,0 +1,10 @@
+fruit 0.50
+vegetable 0.55
+book 5.99
+cereal 3.98
+medicalsupplies 6.88
+beans 0.99
+rice 2.48
+pizza 4.55
+macandcheese 2.44
+$
